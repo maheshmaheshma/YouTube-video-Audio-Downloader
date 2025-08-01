@@ -1,4 +1,5 @@
 import os
+import base64
 from flask import Flask, request, render_template, jsonify, send_file
 from yt_dlp import YoutubeDL
 from datetime import datetime
@@ -7,10 +8,12 @@ from pathlib import Path
 app = Flask(__name__)
 app.secret_key = 'secret'
 
-cookie_data = os.getenv('COOKIE_DATA')
-if cookie_data:
-    with open('cookies.txt', 'w', encoding='utf-8') as f:
-        f.write(cookie_data)
+# Decode COOKIE_DATA env variable and save as cookies.txt
+cookie_b64 = os.getenv('COOKIE_DATA')
+if cookie_b64:
+    with open('cookies.txt', 'wb') as f:
+        f.write(base64.b64decode(cookie_b64))
+
         
 DOWNLOADS_DIR = str(Path.home() / "Downloads")
 
@@ -65,6 +68,7 @@ def start_download():
             'merge_output_format': 'mp4',
             'quiet': True,
             'noplaylist': True,
+            'cookiefile': 'cookies.txt'
         }
 
         with YoutubeDL(ydl_opts) as ydl:
@@ -101,6 +105,7 @@ def download_audio():
                 'key': 'FFmpegExtractAudio',
                 'preferredcodec': 'mp3',
                 'preferredquality': '320',
+                'cookiefile': 'cookies.txt'
             }],
             'quiet': True,
         }
