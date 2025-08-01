@@ -25,6 +25,17 @@ QUALITY_MAP = {
 def sanitize_filename(name):
     return "".join(c for c in name if c not in r'<>:"/\|?*')
 
+# Reusable yt-dlp base options (with cookies + user-agent)
+def get_common_ydl_opts():
+    return {
+        'cookiefile': 'cookies.txt',  # Make sure this file exists and is valid
+        'http_headers': {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0 Safari/537.36'
+        },
+        'quiet': True,
+        'noplaylist': True
+    }
+
 
 @app.route('/')
 def index():
