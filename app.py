@@ -7,6 +7,11 @@ from pathlib import Path
 app = Flask(__name__)
 app.secret_key = 'secret'
 
+cookie_data = os.getenv('COOKIE_DATA')
+if cookie_data:
+    with open('cookies.txt', 'w', encoding='utf-8') as f:
+        f.write(cookie_data)
+        
 DOWNLOADS_DIR = str(Path.home() / "Downloads")
 
 QUALITY_MAP = {
