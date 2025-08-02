@@ -23,21 +23,6 @@ A powerful web application built with **Flask** and **yt-dlp** that lets users d
 
 ---
 
-## 📂 Project Structure
-YouTube Video Downloader/
-├── app.py # Main Flask backend
-├── templates/
-│ └── index.html # HTML frontend
-├── static/
-│ ├── css/ # Styling
-│ └── js/ # JavaScript (progress, validation, etc.)
-├── cookies.txt # (Optional) YouTube login session
-├── .gitignore
-└── README.md
-
-
----
-
 ## 🔧 Requirements
 
 Make sure the following are installed:
