@@ -7,8 +7,7 @@ A powerful web application built with **Flask** and **yt-dlp** that lets users d
 - 🎥 Download YouTube videos in 480p, 720p, 1440p, or highest available
 - 🎵 Extract high-quality audio (MP3 320kbps)
 - 📁 Files saved to your system's `Downloads` folder
-- 🔒 Cookies support for age-restricted/private videos
-- ✅ Real-time progress (if enabled)
+- ✅ Real-time progress 
 - 🧼 Clean filenames and supports audio-only extraction
 - 💻 Simple, responsive HTML frontend
 
