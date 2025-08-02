@@ -21,7 +21,67 @@ A powerful web application built with **Flask** and **yt-dlp** that lets users d
 - **Others:** ffmpeg (for audio conversion)
 
 ---
+To install FFmpeg, follow the instructions based on your operating system:
 
+🪟 For Windows
+🔧 Method 1: Manual Installation (Recommended for Python/yt-dlp projects)
+Go to:
+👉 https://www.gyan.dev/ffmpeg/builds/
+
+Download:
+
+Under “Release builds”, click the “ffmpeg-release-essentials.zip”
+
+Extract the ZIP:
+
+Right-click → Extract All
+
+Move the extracted folder to a location like:
+C:\ffmpeg
+
+Add to Environment Variables:
+
+Copy the path: C:\ffmpeg\bin
+
+Press Windows + S, search for "Environment Variables"
+
+In System Variables, select Path → click Edit
+
+Click New → paste C:\ffmpeg\bin → click OK
+
+✅ Verify:
+
+Open Command Prompt, type:
+
+nginx
+Copy
+Edit
+ffmpeg -version
+You should see FFmpeg version info.
+
+🍎 For macOS
+Using Homebrew:
+bash
+Copy
+Edit
+brew install ffmpeg
+Don’t have Homebrew? Install it first:
+
+bash
+Copy
+Edit
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+🐧 For Linux (Ubuntu/Debian)
+bash
+Copy
+Edit
+sudo apt update
+sudo apt install ffmpeg
+✅ Verify installation:
+bash
+Copy
+Edit
+ffmpeg -version
 ## 🔧 Requirements
 
 Make sure the following are installed:
